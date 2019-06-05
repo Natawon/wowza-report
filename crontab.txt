@@ -1,0 +1,5 @@
+*/30 * * * * /data/utils/get-wowza-log.sh >/dev/null 2>&1
+5 * * * * sh /data/utils/gen-reports-v2.sh >> /data/utils/cron.log
+0 4 * * * /data/utils/syncfiles.sh
+10 * * * * sshpass -p 'vrthefrog' rsync  -ahe -zz -v --progress --stats -e "ssh -p 22" root@178.128.114.248:/data-backup/ /data-backup/nia-db
+
